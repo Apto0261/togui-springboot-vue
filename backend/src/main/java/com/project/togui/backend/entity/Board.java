@@ -1,6 +1,4 @@
 package com.project.togui.backend.entity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.project.togui.backend.entity.Member;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

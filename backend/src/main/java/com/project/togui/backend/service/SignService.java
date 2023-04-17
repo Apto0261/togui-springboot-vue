@@ -70,4 +70,12 @@ public class SignService {
         return new SignResponse(member);
     }
 
+    public boolean isValidNickname(String nickname) throws Exception {
+        return memberRepository.existsByNickname(nickname) ;
+    }
+
+    public boolean isValidEmail(String email) throws Exception {
+        return memberRepository.existsByEmail(email);
+    }
+
 }

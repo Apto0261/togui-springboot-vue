@@ -3,10 +3,12 @@ import Main from "@/pages/Main"
 import Login from "@/pages/Login"
 import Board from "@/pages/Board"
 import BoardWrite from "@/pages/BoardWrite"
+import Register from "@/pages/Register"
 
 const routes = [
     {path:'/', component: Main},
     {path:'/login', component: Login},
+    {path:'/register', component: Register},
     {path:'/board', component: Board},
     {path:'/board/write', component: BoardWrite},
 

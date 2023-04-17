@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,6 +49,16 @@ public class SignController {
     @PostMapping("/register")
     public ResponseEntity<Boolean> register(@RequestBody SignRequest request) throws Exception {
         return new ResponseEntity<>(signService.register(request), HttpStatus.OK);
+    }
+
+    @GetMapping("/register/nicknamechk/{nickname}")
+    public ResponseEntity<Boolean> isValidNickname(@PathVariable String nickname) throws Exception{
+        return ResponseEntity.ok(signService.isValidNickname(nickname));
+    }
+
+    @GetMapping("/register/emailchk/{email}")
+    public ResponseEntity<Boolean> isValidEmail(@PathVariable String email) throws Exception{
+        return ResponseEntity.ok(signService.isValidEmail(email));
     }
 
     @GetMapping("/user/get")

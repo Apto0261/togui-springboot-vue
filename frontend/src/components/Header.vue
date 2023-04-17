@@ -12,7 +12,7 @@
         <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
           <router-link class="me-3 py-2 text-dark text-decoration-none" to="/board">게시판</router-link>
           <a class="me-3 py-2 text-dark text-decoration-none" @click="getUser()" v-if="$store.state.account.id">회원 정보</a>
-          <router-link class="py-2 text-dark text-decoration-none" to="/login" v-if="!$store.state.account.id">Login</router-link>
+          <router-link class="py-2 text-dark text-decoration-none" to="/login" v-if="!$store.state.account.id">로그인</router-link>
           <a class="me-3 py-2 text-dark text-decoration-none" @click="logout()" v-else>로그아웃</a>
         </nav>
       </div>

@@ -31,7 +31,7 @@ public class Member extends BaseDate{
     @Column(nullable = false,length = 100)
     private String password;
 
-    @Column(length = 100)
+    @Column(length = 100, unique = true)
     private String nickname;
 
     @Column(length = 100)
