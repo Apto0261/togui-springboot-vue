@@ -21,7 +21,7 @@ public class BoardDto {
 
     private String nickname;
     
-    private LocalDateTime createDate;
+    private String createDate;
 
     private int viewCnt;
 

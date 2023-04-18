@@ -50,6 +50,10 @@ export default {
     });
 
     const isValidNickname = (nickname) => {
+      if(!nickname){
+        alert("닉네임 입력해 주세요.")
+        return
+      }
       axios.get("/api/register/nicknamechk/" + nickname)
       .then((res) => {
         if(!res.data){
@@ -71,6 +75,10 @@ export default {
     }
 
     const isValidEmail = (email) => {
+      if(!email){
+        alert("이메일 입력해 주세요.")
+        return
+      }
       axios.get("/api/register/emailchk/" + email)
       .then((res) => {
         if(!res.data){
@@ -86,8 +94,18 @@ export default {
     
     
     const submit = () => {
+      if(state.form.nickname == "" || !state.form.nickname){
+        alert("닉네임을 입력해 주세요");
+        return
+      }
+
       if(!nicknameChk) {
         alert("닉네임 중복 체크 해주세요.");
+        return
+      }
+
+      if(state.form.email == "" || !state.form.email){
+        alert("이메일을 입력해 주세요");
         return
       }
 
@@ -95,14 +113,7 @@ export default {
         alert("이메일 중복 체크 해주세요.");
         return
       }
-      if(state.form.email == "" || !state.form.email){
-        alert("이메일을 입력해 주세요");
-        return
-      }
-      if(state.form.nickname == "" || !state.form.nickname){
-        alert("닉네임을 입력해 주세요");
-        return
-      }
+      
       if(state.form.name == "" || !state.form.name){
         alert("이름을 입력해 주세요");
         return

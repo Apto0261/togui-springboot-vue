@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,11 @@ public class BoardController {
     @GetMapping("/list")
     public ResponseEntity<List<BoardDto>> getBoardList(){
         return new ResponseEntity<>(boardService.getBoardList(), HttpStatus.OK);
+    }
+
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<BoardDto> getBoardDetail(@PathVariable Long id){
+        return new ResponseEntity<>(boardService.getBoardDetail(id), HttpStatus.OK);
     }
 
     @PostMapping("/write")

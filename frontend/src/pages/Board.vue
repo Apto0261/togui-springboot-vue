@@ -13,7 +13,7 @@
       <tbody class="table-group-divider">
         <tr v-for="(i,idx) in state.items" :key="idx">
           <td>{{ i.id }}</td>
-          <td>{{ i.title }}</td>
+          <td><router-link :to="{path:'/boardDetail',query:{key:i.id}}">{{ i.title }}</router-link></td>
           <td>{{ i.nickname }}</td>
           <td>{{ i.createDate }}</td>
           <td>{{ i.viewCnt }}</td>
